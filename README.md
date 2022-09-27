@@ -1,1 +1,1 @@
-# ext-js-playground
+# Ext JS Playground
