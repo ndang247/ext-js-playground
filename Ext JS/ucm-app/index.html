@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+	<title>UCMApp</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="text/javascript">
+    var Ext = Ext || {};
+    Ext.beforeLoad = function (tags) {
+      var s = location.search;
+      var profile;
+      if (s.match(/\bdesktop\b/)) { profile = 'desktop' }
+      else if (s.match(/\bphone\b/)) { profile = 'phone' }
+      else { profile = tags.desktop ? 'desktop' : 'phone' }
+      Ext.manifest ='generatedFiles/' + profile;
+    };
+  </script>
+
+  <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+  <script id="microloader" data-app="9c35d357-7f32-43ff-abc9-8db085cf4824" type="text/javascript" src="generatedFiles/bootstrap.js"></script>
+</head>
+  <body class="launching">
+    <div id="splash" style="margin-top:20%;font-family:Arial;font-size:64px;text-align:center;color:#404040;">
+      <div id="theLoadingText">LOADING...</div>
+      <i style="margin:20px;" class="fa fa-spinner fa-spin"></i>
+    </div>
+  </body>
+</html>
